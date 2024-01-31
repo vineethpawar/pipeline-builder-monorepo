@@ -1,6 +1,6 @@
 # Pipeline builder
 ## 🚧🚧🚧🚧 Work in progress 🚧🚧🚧🚧
-Created a TurboRepo monorepo ecosystem where the UI components (React) are shared between the 3 platforms ```Web (Next js)```, ```Desktop (Electron)``` and ```VS Code Extention (yo generator)```
+Created a custom configured  monorepo ecosystem (using TurboRepo) where the UI components (React) are shared between the 3 platforms ```Web (Next js)```, ```Desktop (Electron)``` and ```VS Code Extention (yo generator)```
 Configured each platform individually with custom build scripts
 
 
