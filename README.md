@@ -1,8 +1,8 @@
-# Turborepo starter
+# Pipeline builder
+## 🚧🚧🚧🚧 Work in progress 🚧🚧🚧🚧
+Created a TurboRepo monorepo ecosystem where the UI components (React) are shared between the 3 platforms Web (Next js), Desktop (Electron), VS Code Extention (yo generator)
+Configured each platform individually with custom build scripts
 
-This is an official starter Turborepo.
-
-## Using this example
 
 Run the following command:
 
@@ -10,9 +10,6 @@ Run the following command:
 npx create-turbo@latest
 ```
 
-## What's inside?
-
-This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
@@ -34,40 +31,20 @@ This Turborepo has some additional tools already setup for you:
 
 ### Build
 
-To build all apps and packages, run the following command:
+To build :
+- Web
 
 ```
-cd my-turborepo
-pnpm build
+npm run dev --workspace=web
 ```
 
-### Develop
-
-To develop all apps and packages, run the following command:
-
+- Desktop
+(may need to run react server parralely as prerequisite, but adding custom build script sson)
 ```
-cd my-turborepo
-pnpm dev
+npm run dev --worspace=desktop 
 ```
 
-### Remote Caching
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
 
 ## Useful Links
 
