@@ -4,12 +4,21 @@ Created a TurboRepo monorepo ecosystem where the UI components (React) are share
 Configured each platform individually with custom build scripts
 
 
-### Installation
-
-- Workspace installation (root level)
+### Installation 
+(at root level)
+- Workspace installation 
 ```sh
 npm i -W 
+```
+
+-Web App installation
+
+```sh
 npm i --workspace=web 
+```
+
+- Desktop App installation
+```sh
 npm i --worksapce=desktop
 ```
 Additionally, for desktop
