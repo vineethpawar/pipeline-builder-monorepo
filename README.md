@@ -11,7 +11,7 @@ Configured each platform individually with custom build scripts
 npm i -W 
 ```
 
--Web App installation
+- Web App installation
 
 ```sh
 npm i --workspace=web 
