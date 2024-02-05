@@ -80,7 +80,7 @@ React Flow
 - [React Flow node update with styles](https://reactflow.dev/examples/nodes/update-node)https://reactflow.dev/examples/nodes/update-node)
 
 Electron with React App configuration
-[Blog](https://medium.com/@azer.maslow/creating-desktop-applications-with-electron-and-react-b7f81f78c9d5)https://medium.com/@azer.maslow/creating-desktop-applications-with-electron-and-react-b7f81f78c9d5)
+- [Blog](https://medium.com/@azer.maslow/creating-desktop-applications-with-electron-and-react-b7f81f78c9d5)https://medium.com/@azer.maslow/creating-desktop-applications-with-electron-and-react-b7f81f78c9d5)
 
 VS Code Extension
 - [Basics - First Ext](https://code.visualstudio.com/api/get-started/your-first-extension)
