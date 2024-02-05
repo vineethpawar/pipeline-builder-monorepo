@@ -12,7 +12,7 @@ function createWindow () {
     }
   })
 
-  // and load the index.html of the app.
+  // Replace with PROD_URL of web deployment
   mainWindow.loadURL('http://localhost:3001');
 
   // Open the DevTools.

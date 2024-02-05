@@ -13,7 +13,7 @@ export const nodeData = [
   {
     id: uniqueNamesGenerator(labelCustomConfig),
     type: "customnode",
-    position: { x: 150, y: 10 },
+    position: { x: -150, y: -50 },
     input: 1,
     output: 4,
     description: "",

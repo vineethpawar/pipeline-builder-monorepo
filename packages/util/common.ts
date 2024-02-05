@@ -3,7 +3,7 @@ import { uniqueNamesGenerator } from "unique-names-generator";
 import { labelCustomConfig } from "./config";
 import { AddNodeArgs } from "./types";
 
-export const addNodeToEditor = ({input,output,onClose,setNodes,description='{}'}:AddNodeArgs) => {
+export const addNodeToEditor = ({input,output,onClose,setNodes,description='{}',position={ x: 0, y: 0 }}:AddNodeArgs) => {
     const label = uniqueNamesGenerator(labelCustomConfig);
     const newNode = {
       id: label,
@@ -13,7 +13,7 @@ export const addNodeToEditor = ({input,output,onClose,setNodes,description='{}'}
         output,
         description
       },
-      position: { x: -100, y: 0 },
+      position
     };
     // @ts-ignore
     setNodes((nodes) => nodes.concat(newNode));

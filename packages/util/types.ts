@@ -6,6 +6,7 @@ export interface AddNodeArgs {
     setNodes: (nodes: any) => void;
     onClose: () => void;
     description?: string;
+    position?: XYPosition;
 }
 
   export type NodeBlock = {
@@ -47,3 +48,12 @@ export interface AddNodeArgs {
     error?:string
    }>;
   }
+
+
+  interface NodeProps {
+    id: string;
+    data: any;
+  }
+
+  export type NormalNodeProps = NodeProps;
+  export type ErrorNodeProps = NodeProps;

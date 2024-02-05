@@ -38,6 +38,7 @@ const SideBar: React.FC = () => {
   } = useMyContext();
 
   const addNode = () => {
+   
     addNodeToEditor({
       input: numInputs,
       output: numOutputs,
@@ -73,11 +74,11 @@ const SideBar: React.FC = () => {
           </Space>
         }
       >
-        <Form form={form} layout="vertical" style={{ marginBottom: "20px" }}>
+        <Form form={form} onFinish={addNode} layout="vertical" style={{ marginBottom: "20px" }}>
           <Form.Item
             name="inputNum"
             label="Number of Inputs"
-            rules={[{ required: false, message: "Enter number of inputs" }]}
+            rules={[{ required: false,type:'number', message:"Invalid value", pattern: /^[0-9]*$/}]}
           >
             <InputNumber
               style={{ width: "100%" }}
@@ -92,7 +93,7 @@ const SideBar: React.FC = () => {
           <Form.Item
             name="outputNum"
             label="Number of Outputs"
-            rules={[{ required: false, message: "Number of outputs" }]}
+            rules={[{ required: false,type:"number", message: "Invalid value", pattern: /^[0-9]*$/}]}
           >
             <InputNumber
               style={{ width: "100%" }}
@@ -128,7 +129,7 @@ const SideBar: React.FC = () => {
           </Row>
 
           <Button
-            onClick={addNode}
+            htmlType="submit"
             type="primary"
             block
             icon={<SubnodeOutlined />}

@@ -4,7 +4,7 @@ import { MyContextProvider } from "./MyContext";
 import SideBar from "./Sidebar";
 import ValidateButton from "./ValidateButton";
 
-const Builder = () => {
+const Builder:React.FC = () => {
 
   return (
     <MyContextProvider>
@@ -13,7 +13,6 @@ const Builder = () => {
         <Editor />
         <ValidateButton />
       </main>
-
     </MyContextProvider>
   );
 };

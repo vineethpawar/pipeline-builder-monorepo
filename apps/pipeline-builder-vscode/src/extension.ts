@@ -15,7 +15,7 @@ export function activate(context: vscode.ExtensionContext) {
     }
   );
 
-  // Replace 'https://example.com' with the URL you want to load
+  // Replace with PROD_URL of web deployment
   const externalUrl = 'http://localhost:3001';
 
   const sidebarWidth = vscode.workspace
