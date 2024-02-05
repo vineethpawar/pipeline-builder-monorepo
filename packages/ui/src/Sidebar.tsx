@@ -1,5 +1,4 @@
 "use client";
-import React, { useState } from "react";
 import { PlusOutlined, SubnodeOutlined } from "@ant-design/icons";
 import {
   Button,
@@ -9,18 +8,11 @@ import {
   Input,
   InputNumber,
   Row,
-  notification,
-  Space,
+  Space
 } from "antd";
-import {
-  uniqueNamesGenerator,
-  Config,
-  adjectives,
-  colors,
-  animals,
-} from "unique-names-generator";
-import { useMyContext } from "./MyContext";
+import React, { useState } from "react";
 import { addNodeToEditor } from './../../util/common';
+import { useMyContext } from "./MyContext";
 
 
 const SideBar: React.FC = () => {
