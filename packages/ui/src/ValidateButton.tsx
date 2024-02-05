@@ -20,7 +20,7 @@ const ValidateButton = () => {
     setNodes((prevNodes:NodeBlock[]) => {
       return prevNodes.map((node) => ({
         ...node,
-        type: 'errornode',
+        type: 'customnode',
       } 
     ))
     })
