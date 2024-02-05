@@ -76,14 +76,14 @@ Monoreop configuration
 - [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
 
 React Flow
-- [Rectflow validation]([url](https://reactflow.dev/examples/interaction/validation)https://reactflow.dev/examples/interaction/validation)
-- [React Flow node update with styles]([url](https://reactflow.dev/examples/nodes/update-node)https://reactflow.dev/examples/nodes/update-node)
+- [Rectflow validation](https://reactflow.dev/examples/interaction/validation)https://reactflow.dev/examples/interaction/validation)
+- [React Flow node update with styles](https://reactflow.dev/examples/nodes/update-node)https://reactflow.dev/examples/nodes/update-node)
 
 Electron with React App configuration
-[Blog]([url](https://medium.com/@azer.maslow/creating-desktop-applications-with-electron-and-react-b7f81f78c9d5)https://medium.com/@azer.maslow/creating-desktop-applications-with-electron-and-react-b7f81f78c9d5)
+[Blog](https://medium.com/@azer.maslow/creating-desktop-applications-with-electron-and-react-b7f81f78c9d5)https://medium.com/@azer.maslow/creating-desktop-applications-with-electron-and-react-b7f81f78c9d5)
 
 VS Code Extension
-- [Basics - First Ext]([url](https://code.visualstudio.com/api/get-started/your-first-extension)https://code.visualstudio.com/api/get-started/your-first-extension)
-- [Configuring React UI in webview with some customisations ]([url](https://blog.r2devops.io/blog/All/writing-vscode-extension-with-react/#:~:text=The%20first%20step%20to%20create,the%20skeleton%20of%20the%20extension.)https://blog.r2devops.io/blog/All/writing-vscode-extension-with-react/#:~:text=The%20first%20step%20to%20create,the%20skeleton%20of%20the%20extension.)
-- [VSCode Webview Panel with React]([url](https://medium.com/@michaelbenliyan/developers-guide-to-building-vscode-webview-panel-with-react-and-messages-797981f34013)https://medium.com/@michaelbenliyan/developers-guide-to-building-vscode-webview-panel-with-react-and-messages-797981f34013)
+- [Basics - First Ext](https://code.visualstudio.com/api/get-started/your-first-extension)
+- [Configuring React UI in webview with some customisations](https://blog.r2devops.io/blog/All/writing-vscode-extension-with-react/#:~:text=The%20first%20step%20to%20create,the%20skeleton%20of%20the%20extension.)
+- [VSCode Webview Panel with React](https://medium.com/@michaelbenliyan/developers-guide-to-building-vscode-webview-panel-with-react-and-messages-797981f34013)
 
