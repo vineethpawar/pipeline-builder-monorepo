@@ -48,8 +48,9 @@ npm run dev --workspace=web
 ```
 
 - Desktop
-(may need to run react server parralely as prerequisite, but adding custom build script sson)
+(run these on seperate terminals in mentioned order)
 ```
+npm run dev --worspace=web 
 npm run dev --worspace=desktop 
 ```
 
