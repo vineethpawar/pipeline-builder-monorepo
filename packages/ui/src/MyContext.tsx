@@ -2,8 +2,8 @@ import { createContext, useContext, useState } from 'react';
 import { useEdgesState, useNodesState } from 'reactflow';
 
 const MyContext = createContext({
-    num_inputs: 0,
-    num_outputs: 0,
+    numInputs: 0,
+    numOutputs: 0,
     description: "",
     setNumInputs: (num: number) => {},
     setNumOutputs: (num: number) => {},
@@ -21,16 +21,16 @@ interface MyContextProps {
 }
 
 export const MyContextProvider = ({ children }:MyContextProps ) => {
-    const [num_inputs, setNumInputs] = useState(0);
-    const [num_outputs, setNumOutputs] = useState(0);
+    const [numInputs, setNumInputs] = useState(0);
+    const [numOutputs, setNumOutputs] = useState(0);
     const [description, setDescription] = useState("");
   
     const [nodes, setNodes, onNodesChange] = useNodesState([]);
     const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 
   const contextValue = {
-    num_inputs,
-    num_outputs,
+    numInputs,
+    numOutputs,
     description,
     setNumInputs,
     setNumOutputs,

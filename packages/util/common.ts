@@ -1,24 +1,18 @@
 import { notification } from "antd";
-import { Config, adjectives, animals, colors, uniqueNamesGenerator } from "unique-names-generator";
-import { AddNodeArgs } from "./interfaces";
+import { uniqueNamesGenerator } from "unique-names-generator";
+import { labelCustomConfig } from "./config";
+import { AddNodeArgs } from "./types";
 
-
-const customConfig: Config = {
-    dictionaries: [adjectives, colors,animals],
-    separator: "-",
-  };
-  
-
-export const addNodeToEditor = ({input,output,onClose,setNodes,description=''}:AddNodeArgs) => {
-    const label = uniqueNamesGenerator(customConfig);
+export const addNodeToEditor = ({input,output,onClose,setNodes,description='{}'}:AddNodeArgs) => {
+    const label = uniqueNamesGenerator(labelCustomConfig);
     const newNode = {
       id: label,
       type: "customnode",
       data: {
         input,
-        output
+        output,
+        description
       },
-      description: description,
       position: { x: -100, y: 0 },
     };
     // @ts-ignore

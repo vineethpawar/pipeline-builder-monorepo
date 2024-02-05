@@ -2,22 +2,23 @@
 import { PlusOutlined, SubnodeOutlined } from "@ant-design/icons";
 import {
   Button,
+  Card,
   Col,
   Drawer,
   Form,
   Input,
   InputNumber,
   Row,
-  Space
+  Space,
 } from "antd";
 import React, { useState } from "react";
-import { addNodeToEditor } from './../../util/common';
+import { addNodeToEditor } from "./../../util/common";
 import { useMyContext } from "./MyContext";
-
+import { nodeData } from "./../../data/nodeData";
 
 const SideBar: React.FC = () => {
   const [open, setOpen] = useState(false);
-
+  const [form] = Form.useForm();
   const showDrawer = () => {
     setOpen(true);
   };
@@ -26,12 +27,27 @@ const SideBar: React.FC = () => {
     setOpen(false);
   };
 
-  const { num_inputs, num_outputs, description, setDescription, setNumInputs, setNumOutputs, setNodes } =
-    useMyContext();
-  
+  const {
+    numInputs,
+    numOutputs,
+    description,
+    setDescription,
+    setNumInputs,
+    setNumOutputs,
+    setNodes,
+  } = useMyContext();
+
   const addNode = () => {
-    addNodeToEditor({input: num_inputs, output:num_outputs, onClose, setNodes, description });
-    };
+    addNodeToEditor({
+      input: numInputs,
+      output: numOutputs,
+      onClose,
+      setNodes,
+      description,
+    });
+    form.resetFields();
+    setDescription("");
+  };
 
   return (
     <div>
@@ -46,7 +62,7 @@ const SideBar: React.FC = () => {
       <Drawer
         placement="left"
         title="Enter Node details"
-        width={'100%'}
+        width={"100%"}
         style={{ maxWidth: 400 }}
         closeIcon={false}
         onClose={onClose}
@@ -57,7 +73,7 @@ const SideBar: React.FC = () => {
           </Space>
         }
       >
-        <Form layout="vertical" hideRequiredMark>
+        <Form form={form} layout="vertical" style={{ marginBottom: "20px" }}>
           <Form.Item
             name="inputNum"
             label="Number of Inputs"
@@ -67,7 +83,7 @@ const SideBar: React.FC = () => {
               style={{ width: "100%" }}
               defaultValue={0}
               placeholder="Number of inputs"
-              value={num_inputs}
+              value={numInputs}
               // @ts-ignore
               onChange={(val) => setNumInputs(val)}
             />
@@ -82,7 +98,7 @@ const SideBar: React.FC = () => {
               style={{ width: "100%" }}
               defaultValue={0}
               placeholder="Number of outputs"
-              value={num_outputs}
+              value={numOutputs}
               // @ts-ignore
               onChange={(val) => setNumOutputs(val)}
             />
@@ -105,7 +121,7 @@ const SideBar: React.FC = () => {
                   placeholder="Enter JSON description"
                   value={description}
                   // @ts-ignore
-                  onChange={(val) => setDescription(val)}
+                  onChange={(val) => setDescription(val?.target?.value)}
                 />
               </Form.Item>
             </Col>
@@ -120,6 +136,26 @@ const SideBar: React.FC = () => {
             Submit
           </Button>
         </Form>
+        {nodeData?.map((node, ind) => {
+          return (
+            <Card
+              size="small"
+              title={"Add Node " + (ind + 1)}
+              onClick={() => {
+                addNodeToEditor({ onClose, setNodes, ...node });
+              }}
+              style={{
+                marginBottom: "20px",
+                borderWidth: "2px",
+                cursor: "pointer",
+              }}
+            >
+              <p>Inputs: {node?.input || 0}</p>
+              <p>Outputs: {node?.output || 0}</p>
+              <p>Description: {node?.description || ""}</p>
+            </Card>
+          );
+        })}
       </Drawer>
     </div>
   );

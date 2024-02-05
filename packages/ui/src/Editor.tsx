@@ -1,14 +1,13 @@
 "use client";
-import React, { useCallback } from "react";
+import { useCallback } from "react";
 import ReactFlow, {
-  addEdge,
-  Handle,
-  Position,
   Background,
   BackgroundVariant,
   Controls,
+  Handle,
+  Position,
+  addEdge,
 } from "reactflow";
-import {notification} from 'antd';
 import "reactflow/dist/style.css";
 import "./Editor.css";
 import { useMyContext } from "./MyContext";
@@ -40,8 +39,11 @@ const initialNodes = [
 const CustomNode = ({ id, data }) => {
   const input = data?.input || 0;
   const output = data?.output || 0;
+  console.log('DESCR',data);
+
+  
   return (
-    <div>
+    <div style={data?.description?JSON.parse(data?.description|| '{}'):{}}>
       <div>{id}</div>
       {Array(input)
       // @ts-ignore
@@ -52,7 +54,6 @@ const CustomNode = ({ id, data }) => {
             type="source"
             position={Position.Top}
             style={{
-              background: "red",
               left: index * (100 / (input ? input - 1 : 1)) + "%",
             }}
           />
@@ -88,22 +89,7 @@ const Editor = () => {
     (params) => setEdges((els) => addEdge(params, els)),
     []
   );
-  // const addNode = useCallback(() => {
-  //   setNodes((nodes) =>
-  //     nodes.concat([
-  //       {
-  //         id: "G",
-  //         type: "customnode",
-  //         data: {
-  //           input: 3,
-  //           output: 3,
-  //         },
-  //         position: { x: 0, y: 400 },
-  //       },
-  //     ])
-  //   );
-  // }, []);
-
+ 
   return (
     <div style={{ width: "100%", height: "100vh" }}>
       <ReactFlow
