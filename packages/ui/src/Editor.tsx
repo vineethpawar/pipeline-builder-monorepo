@@ -1,8 +1,6 @@
 "use client";
-import React, { useState, useCallback } from "react";
+import React, { useCallback } from "react";
 import ReactFlow, {
-  useNodesState,
-  useEdgesState,
   addEdge,
   Handle,
   Position,
@@ -10,9 +8,10 @@ import ReactFlow, {
   BackgroundVariant,
   Controls,
 } from "reactflow";
-
+import {notification} from 'antd';
 import "reactflow/dist/style.css";
 import "./Editor.css";
+import { useMyContext } from "./MyContext";
 
 const initialNodes = [
   {
@@ -42,7 +41,7 @@ const CustomNode = ({ id, data }) => {
   const input = data?.input || 0;
   const output = data?.output || 0;
   return (
-    <>
+    <div>
       <div>{id}</div>
       {Array(input)
       // @ts-ignore
@@ -73,7 +72,7 @@ const CustomNode = ({ id, data }) => {
             }}
           />
         ))}
-    </>
+    </div>
   );
 };
 
@@ -81,34 +80,29 @@ const nodeTypes = {
   customnode: CustomNode,
 };
 
-const ValidationFlow = () => {
-  // @ts-ignores
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState([]);
-  const [input, setInput] = useState(0);
-  const [output, setOutput] = useState(0);
-  const [json, setJson] = useState("");
+const Editor = () => {
+   const {nodes, onNodesChange, edges, setEdges, onEdgesChange} = useMyContext();
 
   const onConnect = useCallback(
     // @ts-ignore
     (params) => setEdges((els) => addEdge(params, els)),
     []
   );
-  const addNode = useCallback(() => {
-    setNodes((nodes) =>
-      nodes.concat([
-        {
-          id: "G",
-          type: "customnode",
-          data: {
-            input: 3,
-            output: 3,
-          },
-          position: { x: 0, y: 400 },
-        },
-      ])
-    );
-  }, []);
+  // const addNode = useCallback(() => {
+  //   setNodes((nodes) =>
+  //     nodes.concat([
+  //       {
+  //         id: "G",
+  //         type: "customnode",
+  //         data: {
+  //           input: 3,
+  //           output: 3,
+  //         },
+  //         position: { x: 0, y: 400 },
+  //       },
+  //     ])
+  //   );
+  // }, []);
 
   return (
     <div style={{ width: "100%", height: "100vh" }}>
@@ -132,4 +126,4 @@ const ValidationFlow = () => {
   );
 };
 
-export default ValidationFlow;
+export default Editor;

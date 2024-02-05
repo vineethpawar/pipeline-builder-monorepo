@@ -4,7 +4,8 @@
   "private": true,
   "exports": {
     "./Sidebar":"./src/Sidebar.tsx",
-    "./Editor":"./src/Editor.tsx"
+    "./Editor":"./src/Editor.tsx",
+    "./Builder":"./src/Builder.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",

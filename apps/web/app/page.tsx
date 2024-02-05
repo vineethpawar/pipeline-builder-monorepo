@@ -1,14 +1,11 @@
 import React from "react";
+// import Builder from "@repo/ui/Builder";
 
 export default function Page(): JSX.Element {
-  const Editor = React.lazy(() => import("@repo/ui/Editor"));
-  const SideBar = React.lazy(() => import("@repo/ui/Sidebar"));
+  const Builder = React.lazy(() => import("@repo/ui/Builder"));
   return (
     <React.Suspense fallback="Loading...">
-    <main>
-      <SideBar />
-      <Editor/>
-    </main>
+      <Builder/>
     </React.Suspense>
   );
 }
