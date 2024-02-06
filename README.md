@@ -87,3 +87,11 @@ VS Code Extension
 - [Configuring React UI in webview with some customisations](https://blog.r2devops.io/blog/All/writing-vscode-extension-with-react/#:~:text=The%20first%20step%20to%20create,the%20skeleton%20of%20the%20extension.)
 - [VSCode Webview Panel with React](https://medium.com/@michaelbenliyan/developers-guide-to-building-vscode-webview-panel-with-react-and-messages-797981f34013)
 
+
+## Challenges faced
+- Creating the custom monorepo architecture accomodating apps - Desktop, and VS Code as there is no direct boiler plate
+- Setting up custom Electron.js app that supports React to interact with UI and State. 
+- Configuring third party libraries in the shared UI packages folder and fixing compatibility issues
+- VS Code Extesion setup in Monorepo was hard to figure out, as no direct solution exists. There were a lot of configurations to figure out.
+- After exploring various Canvas libraries like React DND and others, went with React Flow and spent some time fuiguring out the necessary customisations / work arounds to achieve expected behaviour
+ 
