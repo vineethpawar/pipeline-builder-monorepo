@@ -7,7 +7,7 @@ Configured each platform individually with custom build scripts
 
 https://github.com/vineethpawar/pipeline-builder-monorepo/assets/55575881/6a2e03eb-536c-4405-af78-bd7b9af7281b
 
-##Features
+## Features
 - Add Node (Blocks) with customisations - input / output handles, json field to style node and position (XYCoords)
 - Styled input & outpur handles to identify what can be connected where. These are categorised as source / target to add the obvious behavior that same handles cannot be linked together.
 - Added Drawer feature using Ant design UI library to add Node, with required fields and some predefined blocks  that can be added to the editor.
